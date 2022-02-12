@@ -1,0 +1,82 @@
+$button-color: #fff;
+$button-text-color: #888;
+$text-color: #666;
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.ui-color-picker-control {
+  user-select: none;
+  font-size: 1.2em;
+  display: flex;
+  align-items: center;
+
+  // Button
+  //
+  button {
+    font-size: 1em;
+    width: 100px;
+    padding: 8px;
+    margin-left: 4px;
+    margin-right: 4px;
+    border-radius: 6px;
+    background-color: $button-color;
+    border: solid 1px #ddd;
+    text-transform: capitalize;
+    color: $button-text-color;
+
+    &:hover {
+      background-color: darken($button-color, 10);
+      color: darken($button-text-color, 10);
+    }
+
+    &:active {
+      background-color: darken($button-color, 40);
+      color: lighten($button-text-color, 40);
+    }
+  }
+
+  // Labels + Values
+  //
+  dl {
+    display: inline;
+    dt {
+      display: inline-block;
+      color: lighten($text-color, 30);
+      font-weight: bolder;
+      padding-left: 4px;
+      padding-right: 2px;
+      &::after {
+        content: ":";
+      }
+    }
+
+    dd {
+      display: inline-block;
+      color: $text-color;
+      text-align: left;
+      padding-left: 2px;
+      margin: 0;
+    }
+    dd:nth-child(2) {
+      width: 20px;
+    }
+
+    dd:nth-child(4) {
+      width: 130px;
+    }
+  }
+
+  // Swatch control
+  //
+  .swatch {
+    border: solid 2px #ddd;
+    width: 100px;
+    height: 40px;
+    border-radius: 8px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.12),
+      0 4px 4px rgba(0, 0, 0, 0.12), 0 8px 8px rgba(0, 0, 0, 0.12),
+      0 16px 16px rgba(0, 0, 0, 0.12);
+  }
+}
