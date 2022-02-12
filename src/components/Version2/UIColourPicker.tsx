@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import useColorHex from "../../hooks/useColorHex";
-import useColorName from "../../hooks/useColorName";
+import useColourHex from "../../hooks/useColourHex";
+import useColourName from "../../hooks/useColourName";
 
 // extracted some functions, but
 // events are still handled inline
@@ -9,34 +9,34 @@ import useColorName from "../../hooks/useColorName";
 // tested
 //
 const UIColourPicker: React.FC = () => {
-  var [color, setColor] = useState(0);
+  var [colour, setColour] = useState(0);
 
-  var colorName = useColorName(color);
-  var colorHex = useColorHex(color);
+  var colourName = useColourName(colour);
+  var colourHex = useColourHex(colour);
 
   return (
-    <div className="ui-color-picker-control">
+    <div className="ui-colour-picker-control">
       <button
         onClick={() => {
-          setColor((state) => (state <= 0 ? (state = 11) : state - 1));
+          setColour((state) => (state <= 0 ? (state = 11) : state - 1));
         }}
       >
         down
       </button>
       <button
         onClick={() => {
-          setColor((state) => (state >= 11 ? (state = 0) : state + 1));
+          setColour((state) => (state >= 11 ? (state = 0) : state + 1));
         }}
       >
         up
       </button>
       <dl>
-        <dt>Color</dt>
-        <dd>{color}</dd>
+        <dt>Colour</dt>
+        <dd>{colour}</dd>
         <dt>Name</dt>
-        <dd>{colorName}</dd>
+        <dd>{colourName}</dd>
       </dl>
-      <div className="swatch" style={{ backgroundColor: colorHex }}></div>
+      <div className="swatch" style={{ backgroundColor: colourHex }}></div>
     </div>
   );
 };

@@ -1,28 +1,28 @@
 import { renderHook, act } from "@testing-library/react-hooks";
-import useColorControllerV2 from "../hooks/useColorControllerV2";
+import useColourControllerV2 from "../hooks/useColourControllerV2";
 
-describe("test color controller hook", () => {
+describe("test colour controller hook", () => {
   test("create and test default state", () => {
-    const { result } = renderHook(() => useColorControllerV2());
-    expect(result.current.color).toBe(0);
-    expect(result.current.colorName).toBe("Red");
-    expect(result.current.colorHex).toBe("#ff0000");
+    const { result } = renderHook(() => useColourControllerV2());
+    expect(result.current.colour).toBe(0);
+    expect(result.current.colourName).toBe("Red");
+    expect(result.current.colourHex).toBe("#ff0000");
   });
 
   test("click up single", () => {
-    const { result } = renderHook(() => useColorControllerV2());
+    const { result } = renderHook(() => useColourControllerV2());
 
     act(() => {
       result.current.handleUpClickEvent();
     });
 
-    expect(result.current.color).toBe(1);
-    expect(result.current.colorName).toBe("Orange");
-    expect(result.current.colorHex).toBe("#ff8000");
+    expect(result.current.colour).toBe(1);
+    expect(result.current.colourName).toBe("Orange");
+    expect(result.current.colourHex).toBe("#ff8000");
   });
 
   test("click up multiple", () => {
-    const { result } = renderHook(() => useColorControllerV2());
+    const { result } = renderHook(() => useColourControllerV2());
 
     act(() => {
       result.current.handleUpClickEvent();
@@ -32,13 +32,13 @@ describe("test color controller hook", () => {
       result.current.handleUpClickEvent();
     });
 
-    expect(result.current.color).toBe(5);
-    expect(result.current.colorName).toBe("Spring Green");
-    expect(result.current.colorHex).toBe("#00ff80");
+    expect(result.current.colour).toBe(5);
+    expect(result.current.colourName).toBe("Spring Green");
+    expect(result.current.colourHex).toBe("#00ff80");
   });
 
   test("click up multiple and wrap", () => {
-    const { result } = renderHook(() => useColorControllerV2());
+    const { result } = renderHook(() => useColourControllerV2());
 
     act(() => {
       result.current.handleUpClickEvent();
@@ -55,13 +55,13 @@ describe("test color controller hook", () => {
       result.current.handleUpClickEvent();
     });
 
-    expect(result.current.color).toBe(0);
-    expect(result.current.colorName).toBe("Red");
-    expect(result.current.colorHex).toBe("#ff0000");
+    expect(result.current.colour).toBe(0);
+    expect(result.current.colourName).toBe("Red");
+    expect(result.current.colourHex).toBe("#ff0000");
   });
 
   test("click down", () => {
-    const { result } = renderHook(() => useColorControllerV2());
+    const { result } = renderHook(() => useColourControllerV2());
 
     act(() => {
       result.current.handleUpClickEvent();
@@ -71,20 +71,20 @@ describe("test color controller hook", () => {
       result.current.handleDownClickEvent();
     });
 
-    expect(result.current.color).toBe(3);
-    expect(result.current.colorName).toBe("Chartreuse");
-    expect(result.current.colorHex).toBe("#80ff00");
+    expect(result.current.colour).toBe(3);
+    expect(result.current.colourName).toBe("Chartreuse");
+    expect(result.current.colourHex).toBe("#80ff00");
   });
 
   test("click down and wrap", () => {
-    const { result } = renderHook(() => useColorControllerV2());
+    const { result } = renderHook(() => useColourControllerV2());
 
     act(() => {
       result.current.handleDownClickEvent();
     });
 
-    expect(result.current.color).toBe(11);
-    expect(result.current.colorName).toBe("Magenta");
-    expect(result.current.colorHex).toBe("#ff0080");
+    expect(result.current.colour).toBe(11);
+    expect(result.current.colourName).toBe("Magenta");
+    expect(result.current.colourHex).toBe("#ff0080");
   });
 });

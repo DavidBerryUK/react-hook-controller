@@ -5,7 +5,7 @@ import TestRenderer, { act } from "react-test-renderer";
 // that events are fired, we do not need to test all the hook logic
 // as this is done in the hook tests
 //
-describe("color picker control", () => {
+describe("colour picker control", () => {
   test("Ensure Control can be created", () => {
     const instance = createControlInstance();
 
@@ -30,7 +30,7 @@ describe("color picker control", () => {
     const instance = createControlInstance();
 
     // press up
-    // (calls hook ColorControllerV2 )
+    // (calls hook ColourControllerV2 )
     act(instance.buttonUp.props.onClick);
 
     // test output values
@@ -44,7 +44,7 @@ describe("color picker control", () => {
   test("Press Down Click Event", () => {
     const instance = createControlInstance();
     // press up
-    // (calls hook ColorControllerV2 )
+    // (calls hook ColourControllerV2 )
     act(instance.buttonDown.props.onClick);
 
     // test output values

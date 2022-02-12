@@ -1,45 +1,45 @@
 import React from "react";
 import UISwatch from "../swatch/UISwatch";
-import useColorControllerV2 from "../../hooks/useColorControllerV2";
+import useColourControllerV2 from "../../hooks/useColourControllerV2";
 
 //
 // showing how we can use multiple
 // versions of the same controller, however we would
-// just use 2 instances of the UIColorPicker in reality
+// just use 2 instances of the UIColourPicker in reality
 //
-const UIColourPicker: React.FC = () => {
-  var colorCtrl1 = useColorControllerV2();
-  var colorCtrl2 = useColorControllerV2();
+const UIColouurPicker: React.FC = () => {
+  var colourCtrl1 = useColourControllerV2();
+  var colourCtrl2 = useColourControllerV2();
 
   return (
     <>
       {/* controller 1 */}
-      <div className="ui-color-picker-control">
-        <button onClick={colorCtrl1.handleDownClickEvent}>down</button>
-        <button onClick={colorCtrl1.handleUpClickEvent}>up</button>
+      <div className="ui-colour-picker-control">
+        <button onClick={colourCtrl1.handleDownClickEvent}>down</button>
+        <button onClick={colourCtrl1.handleUpClickEvent}>up</button>
         <dl>
-          <dt>Color</dt>
-          <dd>{colorCtrl1.color}</dd>
+          <dt>Colouur</dt>
+          <dd>{colourCtrl1.colour}</dd>
           <dt>Name</dt>
-          <dd>{colorCtrl1.colorName}</dd>
+          <dd>{colourCtrl1.colourName}</dd>
         </dl>
-        <UISwatch color={colorCtrl1.colorHex} />
+        <UISwatch colour={colourCtrl1.colourHex} />
       </div>
 
       {/* Controller 2 */}
-      <div className="ui-color-picker-control">
-        <button onClick={colorCtrl2.handleDownClickEvent}>down</button>
-        <button onClick={colorCtrl2.handleUpClickEvent}>up</button>
+      <div className="ui-colour-picker-control">
+        <button onClick={colourCtrl2.handleDownClickEvent}>down</button>
+        <button onClick={colourCtrl2.handleUpClickEvent}>up</button>
         <dl>
-          <dt>Color</dt>
-          <dd>{colorCtrl2.color}</dd>
+          <dt>Colouur</dt>
+          <dd>{colourCtrl2.colour}</dd>
           <dt>Name</dt>
-          <dd>{colorCtrl2.colorName}</dd>
+          <dd>{colourCtrl2.colourName}</dd>
         </dl>
-        <UISwatch color={colorCtrl2.colorHex} />
+        <UISwatch colour={colourCtrl2.colourHex} />
       </div>
     </>
   );
 };
 
-export default UIColourPicker;
+export default UIColouurPicker;

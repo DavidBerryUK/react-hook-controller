@@ -1,7 +1,7 @@
 import React from "react";
-import useColorControllerV1 from "../../hooks/useColorControllerV1";
-import useColorHex from "../../hooks/useColorHex";
-import useColorName from "../../hooks/useColorName";
+import useColourControllerV1 from "../../hooks/useColourControllerV1";
+import useColourHex from "../../hooks/useColourHex";
+import useColourName from "../../hooks/useColourName";
 
 // Extracted event handlers, but
 // still too much code,
@@ -9,23 +9,23 @@ import useColorName from "../../hooks/useColorName";
 // The event handlers can be unit tested
 //
 const UIColourPicker: React.FC = () => {
-  var { color, handleDownClickEvent, handleUpClickEvent } =
-    useColorControllerV1();
+  var { colour, handleDownClickEvent, handleUpClickEvent } =
+    useColourControllerV1();
 
-  var colorName = useColorName(color);
-  var colorHex = useColorHex(color);
+  var colourName = useColourName(colour);
+  var colourHex = useColourHex(colour);
 
   return (
-    <div className="ui-color-picker-control">
+    <div className="ui-colour-picker-control">
       <button onClick={handleDownClickEvent}>down</button>
       <button onClick={handleUpClickEvent}>up</button>
       <dl>
-        <dt>Color</dt>
-        <dd>{color}</dd>
+        <dt>Colour</dt>
+        <dd>{colour}</dd>
         <dt>Name</dt>
-        <dd>{colorName}</dd>
+        <dd>{colourName}</dd>
       </dl>
-      <div className="swatch" style={{ backgroundColor: colorHex }}></div>
+      <div className="swatch" style={{ backgroundColor: colourHex }}></div>
     </div>
   );
 };

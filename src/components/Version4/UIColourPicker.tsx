@@ -1,25 +1,30 @@
 import React from "react";
-import useColorControllerV2 from "../../hooks/useColorControllerV2";
+import useColourControllerV2 from "../../hooks/useColourControllerV2";
 
 // event handlers and functions are
 // encapsulated, but passing too many
 // method of passing back parameters is getting out
 // of control
 const UIColourPicker: React.FC = () => {
-  var { color, colorName, colorHex, handleDownClickEvent, handleUpClickEvent } =
-    useColorControllerV2();
+  var {
+    colour,
+    colourName,
+    colourHex,
+    handleDownClickEvent,
+    handleUpClickEvent,
+  } = useColourControllerV2();
 
   return (
-    <div className="ui-color-picker-control">
+    <div className="ui-colour-picker-control">
       <button onClick={handleDownClickEvent}>down</button>
       <button onClick={handleUpClickEvent}>up</button>
       <dl>
-        <dt>Color</dt>
-        <dd>{color}</dd>
+        <dt>Colour</dt>
+        <dd>{colour}</dd>
         <dt>Name</dt>
-        <dd>{colorName}</dd>
+        <dd>{colourName}</dd>
       </dl>
-      <div className="swatch" style={{ backgroundColor: colorHex }}></div>
+      <div className="swatch" style={{ backgroundColor: colourHex }}></div>
     </div>
   );
 };

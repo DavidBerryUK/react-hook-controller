@@ -6,111 +6,111 @@ import React, { useState } from "react";
 // unit tests
 //
 const UIColourPicker: React.FC = () => {
-  var [color, setColor] = useState(0);
+  var [colour, setColour] = useState(0);
 
-  var colorName = "";
-  var colorHex = "";
+  var colourName = "";
+  var colourHex = "";
 
-  switch (color) {
+  switch (colour) {
     case 0:
-      colorName = "Red";
+      colourName = "Red";
       break;
     case 1:
-      colorName = "Orange";
+      colourName = "Orange";
       break;
     case 2:
-      colorName = "Yellow";
+      colourName = "Yellow";
       break;
     case 3:
-      colorName = "Chartreuse";
+      colourName = "Chartreuse";
       break;
     case 4:
-      colorName = "Green";
+      colourName = "Green";
       break;
     case 5:
-      colorName = "Spring Green";
+      colourName = "Spring Green";
       break;
     case 6:
-      colorName = "Cyan";
+      colourName = "Cyan";
       break;
     case 7:
-      colorName = "Dodger Blue";
+      colourName = "Dodger Blue";
       break;
     case 8:
-      colorName = "Blue";
+      colourName = "Blue";
       break;
     case 9:
-      colorName = "Purple";
+      colourName = "Purple";
       break;
     case 10:
-      colorName = "Violet";
+      colourName = "Violet";
       break;
     case 11:
-      colorName = "Magenta";
+      colourName = "Magenta";
       break;
   }
 
-  switch (color) {
+  switch (colour) {
     case 0:
-      colorHex = "#ff0000";
+      colourHex = "#ff0000";
       break;
     case 1:
-      colorHex = "#ff8000";
+      colourHex = "#ff8000";
       break;
     case 2:
-      colorHex = "#ffff00";
+      colourHex = "#ffff00";
       break;
     case 3:
-      colorHex = "#80ff00";
+      colourHex = "#80ff00";
       break;
     case 4:
-      colorHex = "#00ff00";
+      colourHex = "#00ff00";
       break;
     case 5:
-      colorHex = "#00ff80";
+      colourHex = "#00ff80";
       break;
     case 6:
-      colorHex = "#00ffff";
+      colourHex = "#00ffff";
       break;
     case 7:
-      colorHex = "#0080ff";
+      colourHex = "#0080ff";
       break;
     case 8:
-      colorHex = "#0000ff";
+      colourHex = "#0000ff";
       break;
     case 9:
-      colorHex = "#8000ff";
+      colourHex = "#8000ff";
       break;
     case 10:
-      colorHex = "#ff00ff";
+      colourHex = "#ff00ff";
       break;
     case 11:
-      colorHex = "#ff0080";
+      colourHex = "#ff0080";
       break;
   }
   return (
-    <div className="ui-color-picker-control">
+    <div className="ui-colour-picker-control">
       <button
         onClick={() => {
-          setColor((state) => (state <= 0 ? (state = 11) : state - 1));
+          setColour((state) => (state <= 0 ? (state = 11) : state - 1));
         }}
       >
         down
       </button>
       <button
         onClick={() => {
-          setColor((state) => (state >= 11 ? (state = 0) : state + 1));
+          setColour((state) => (state >= 11 ? (state = 0) : state + 1));
         }}
       >
         up
       </button>
       <dl>
-        <dt>Color</dt>
-        <dd>{color}</dd>
+        <dt>Colour</dt>
+        <dd>{colour}</dd>
         <dt>Name</dt>
-        <dd>{colorName}</dd>
+        <dd>{colourName}</dd>
       </dl>
-      <div className="swatch" style={{ backgroundColor: colorHex }}></div>
+      <div className="swatch" style={{ backgroundColor: colourHex }}></div>
     </div>
   );
 };

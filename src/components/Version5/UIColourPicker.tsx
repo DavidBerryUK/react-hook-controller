@@ -1,6 +1,6 @@
 import React from "react";
 import UISwatch from "../swatch/UISwatch";
-import useColorControllerV2 from "../../hooks/useColorControllerV2";
+import useColourControllerV2 from "../../hooks/useColourControllerV2";
 
 //
 // using same controller as in previous example, but
@@ -9,19 +9,19 @@ import useColorControllerV2 from "../../hooks/useColorControllerV2";
 // also moved the swatch to its own component
 //
 const UIColourPicker: React.FC = () => {
-  var colorCtrl = useColorControllerV2();
+  var colourCtrl = useColourControllerV2();
 
   return (
-    <div className="ui-color-picker-control">
-      <button onClick={colorCtrl.handleDownClickEvent}>down</button>
-      <button onClick={colorCtrl.handleUpClickEvent}>up</button>
+    <div className="ui-colour-picker-control">
+      <button onClick={colourCtrl.handleDownClickEvent}>down</button>
+      <button onClick={colourCtrl.handleUpClickEvent}>up</button>
       <dl>
-        <dt>Color</dt>
-        <dd>{colorCtrl.color}</dd>
+        <dt>Colour</dt>
+        <dd>{colourCtrl.colour}</dd>
         <dt>Name</dt>
-        <dd>{colorCtrl.colorName}</dd>
+        <dd>{colourCtrl.colourName}</dd>
       </dl>
-      <UISwatch color={colorCtrl.colorHex} />
+      <UISwatch colour={colourCtrl.colourHex} />
     </div>
   );
 };

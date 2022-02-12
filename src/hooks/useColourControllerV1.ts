@@ -1,24 +1,24 @@
 import { useState } from "react";
 
 interface IResponse {
-  color: number;
+  colour: number;
   handleUpClickEvent: () => void;
   handleDownClickEvent: () => void;
 }
 
-export default function useColorControllerV1(): IResponse {
-  var [color, setColor] = useState(0);
+export default function useColourControllerV1(): IResponse {
+  var [colour, setColour] = useState(0);
 
   const handleUpClickEvent = () => {
-    setColor((state) => (state >= 11 ? (state = 0) : state + 1));
+    setColour((state) => (state >= 11 ? (state = 0) : state + 1));
   };
 
   const handleDownClickEvent = () => {
-    setColor((state) => (state <= 0 ? (state = 11) : state - 1));
+    setColour((state) => (state <= 0 ? (state = 11) : state - 1));
   };
 
   return {
-    color,
+    colour,
     handleDownClickEvent,
     handleUpClickEvent,
   };
